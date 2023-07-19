@@ -1,0 +1,221 @@
+* {
+  list-style-type: none;
+  text-decoration: none;
+  padding-inline-start: 0px;
+  padding: 0;
+  margin: 0;
+}
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border-spacing: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+
+th {
+  border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+.userlist-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(177, 177, 177);
+  border-start-start-radius: 15px;
+  border-start-end-radius: 15px;
+  margin: 30px 30px;
+}
+
+.userlist-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  padding: 20px 10px;
+}
+
+.userlist-title button {
+  background-color: rgb(0, 133, 221);
+  height: 35px;
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+tr {
+  border: 1px solid rgb(167, 167, 167);
+}
+
+.userlist-info {
+  background-color: rgb(233, 233, 233);
+  height: 100px;
+}
+
+.userlist-body {
+  margin: 10px 10px;
+  border: 1px solid rgb(168, 168, 168);
+}
+
+.users-list {
+  height: 100px;
+}
+.users-list button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.form-container {
+  margin: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  border-bottom: 1px solid gray;
+  padding-left: 40px;
+  height: 70px;
+  align-items: center;
+  display: flex;
+}
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+input {
+  width: 500px;
+  height: 30px;
+  outline: none;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  padding-left: 400px;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: end;
+  padding-right: 50px;
+}
+
+.form-buttons button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: rgb(1, 206, 1);
+  color: white;
+  border: none;
+}
+
+.cancel-button {
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.cancel-button:hover {
+  color: white;
+  background-color: red;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 25%;
+  width: 50%;
+  height: 240px;
+  z-index: 100;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+}
+
+/* @keyframes smoothOpacity {
+  0% {
+    opacity: 0.3;
+  }
+
+  25% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
+
+.modal p {
+  text-align: center;
+  color: red;
+  padding-top: 20px;
+  font-weight: 500;
+}
+
+.user-identifier {
+  padding-top: 50px;
+  padding-left: 30px;
+}
+
+.user-identifier h3 {
+  color: red;
+}
+
+.cancel-modal-button {
+  margin-top: 30px;
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  transition: all 0.3s;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  margin-left: 400px;
+  margin-right: 20px;
+}
+
+.delete-modal-button {
+  color: white;
+  background-color: red;
+  border: none;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+}
