@@ -66,6 +66,10 @@ const EditUser = () => {
         }));
       }
     }
+    setError((prevFormData) => ({
+      ...prevFormData,
+      inTouch: true,
+    }));
   };
 
   //CONTROLL AND SEND EDITED DATA
