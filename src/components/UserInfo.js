@@ -1,12 +1,10 @@
-const UserInfo = () => {
+const UserInfo = ({ identifier }) => {
   return (
     <thead className="userlist-info">
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>City</th>
+        {identifier.map((ident) => {
+          return <th key={ident}>{ident}</th>;
+        })}
         <th>Edit</th>
         <th>Delete</th>
       </tr>

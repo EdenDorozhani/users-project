@@ -18,9 +18,12 @@ td {
 button:hover {
   cursor: pointer;
 }
+button:hover {
+  transform: scale(1.05);
+}
 
 th {
-  border-bottom: 1px solid rgb(193, 193, 193);
+  border-bottom: 1px solid rgb(223, 223, 223);
 }
 
 .userlist-container {
@@ -30,6 +33,7 @@ th {
   border-start-start-radius: 15px;
   border-start-end-radius: 15px;
   margin: 30px 30px;
+  box-shadow: 1px 1px 10px black;
 }
 
 .userlist-title {
@@ -47,7 +51,9 @@ th {
   border: none;
   border-radius: 5px;
   color: white;
+  transition: all 0.1s;
 }
+
 tr {
   border: 1px solid rgb(167, 167, 167);
 }
@@ -64,6 +70,11 @@ tr {
 
 .users-list {
   height: 100px;
+  transition: all 0.3s;
+}
+
+.users-list:hover {
+  background-color: rgb(248, 248, 248);
 }
 .users-list button {
   width: 70px;
@@ -71,6 +82,18 @@ tr {
   border: none;
   border-radius: 5px;
   color: white;
+  transition: all 0.1s;
+}
+.userlist-title div {
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+}
+.userlist-title input {
+  border: none;
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  width: 300px;
 }
 
 .form-container {
@@ -118,6 +141,7 @@ input {
   width: 100px;
   height: 30px;
   border-radius: 5px;
+  transition: all 0.1s;
 }
 
 .submit-button {
@@ -209,6 +233,7 @@ input {
   border-radius: 10px;
   margin-left: 400px;
   margin-right: 20px;
+  transition: all 0.1s;
 }
 
 .delete-modal-button {
@@ -218,9 +243,17 @@ input {
   width: 80px;
   height: 35px;
   border-radius: 10px;
+  transition: all 0.1s;
 }
 
 main {
   text-align: center;
   margin: 2rem auto;
+}
+
+.empty-users {
+  text-align: center;
+  font-weight: 500;
+  color: red;
+  padding-bottom: 9px;
 }

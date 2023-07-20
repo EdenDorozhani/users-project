@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
 import { dataAction } from "./store";
@@ -10,6 +10,8 @@ import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 
 function App() {
+  const [waiting, setWaiting] = useState(false);
+
   const router = createBrowserRouter([
     {
       path: "/",

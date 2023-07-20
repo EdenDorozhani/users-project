@@ -48,6 +48,19 @@ const dataSlice = createSlice({
       const index = state.items.indexOf(deletedItem);
       state.items.splice(index, 1);
     },
+
+    // searchItem(state, action) {
+    //   const value = action.payload;
+    //   if (value.length > 0) {
+    //     const filteredItems = state.items.filter((item) => {
+    //       console.log(item.username.match(value));
+    //       return item.username.match(value);
+    //     });
+    //     state.items = filteredItems;
+    //   } else{
+    //     return state.items
+    //   }
+    // },
   },
 });
 
