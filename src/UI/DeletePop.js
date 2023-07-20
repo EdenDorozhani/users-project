@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useActionData } from "react-router-dom";
 import { dataAction } from "../store";
 import ReactDOM from "react-dom";
 
@@ -50,8 +48,6 @@ const DeletePop = ({ props, close }) => {
         />,
         document.getElementById("overlay-root")
       )}
-
-      {ModalOverlay}
     </>
   );
 };

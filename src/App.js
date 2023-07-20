@@ -7,15 +7,17 @@ import HomePage from "./pages/HomePage";
 import NewPage from "./pages/NewPage";
 import EditPage from "./pages/EditPage";
 import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/Error";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement: <ErrorPage />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: ":id", element: <EditPage /> },
+        { path: "edit-item/:id", element: <EditPage /> },
         { path: "new", element: <NewPage /> },
       ],
     },

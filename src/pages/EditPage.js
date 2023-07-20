@@ -1,7 +1,7 @@
-import EditUser from "../components/EditUser";
+import UserForm from "../components/UserForm";
 
 const EditPage = () => {
-  return <EditUser />;
+  return <UserForm />;
 };
 
 export default EditPage;

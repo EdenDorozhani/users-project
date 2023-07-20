@@ -219,3 +219,8 @@ input {
   height: 35px;
   border-radius: 10px;
 }
+
+main {
+  text-align: center;
+  margin: 2rem auto;
+}

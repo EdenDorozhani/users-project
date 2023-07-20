@@ -1,7 +1,7 @@
-import AddNewUser from "../components/AddNewUser";
+import UserForm from "../components/UserForm";
 
 const NewPage = () => {
-  return <AddNewUser />;
+  return <UserForm />;
 };
 
 export default NewPage;

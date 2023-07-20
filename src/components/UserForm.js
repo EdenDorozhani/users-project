@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { dataAction } from "../store";
 import { useEffect, useState } from "react";
 
-const EditUser = () => {
-  const params = useParams();
-
+const UserForm = () => {
   const data = useSelector((state) => state.items);
-
   const dispatch = useDispatch();
+  const params = useParams();
+  const userId = params;
+  const idValue = Object.keys(userId).length;
 
   //STATE DECLARATION
   const [formData, setFormData] = useState({
@@ -23,8 +23,11 @@ const EditUser = () => {
     inTouch: false,
   });
 
-  // GET AND SET DEFAULT VALUES
+  //GET DEFAULTVALUES IF WE ARE ON EDIT FORM WE WANT DATA
   useEffect(() => {
+    if (idValue === 0) {
+      return;
+    }
     const editedItem = data.find((item) => {
       return item.id == params.id;
     });
@@ -37,11 +40,11 @@ const EditUser = () => {
     });
   }, [data]);
 
+  //SAVE INPUT FIELDS VALUES
   const onChangeHandler = (e) => {
-    //SAVE INPUT FIELDS VALUES
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-    if (formData[name].length < 5) {
+    if (formData[name]?.length < 5) {
       setError((prevFormData) => ({
         ...prevFormData,
         errorState: true,
@@ -54,12 +57,13 @@ const EditUser = () => {
     }
   };
 
+  //CONTROLL IF FORM IS TOUCHED OR NO
   const onBlurHandler = () => {
     for (const values in formData) {
       if (values === "id") {
         continue;
       }
-      if (formData[values].length < 5) {
+      if (formData[values]?.length < 5) {
         setError((prevFormData) => ({
           ...prevFormData,
           errorState: true,
@@ -72,17 +76,29 @@ const EditUser = () => {
     }));
   };
 
-  //CONTROLL AND SEND EDITED DATA
-
+  //CONTROLL VALIDATION AND CONTROLL IF WE WANT TO EDIT OR SEND DATA
   const sendDataHandler = () => {
+    setError((prevFormData) => ({
+      ...prevFormData,
+      inTouch: true,
+    }));
     if (!error.inTouch || error.errorState) {
       return;
     } else {
-      dispatch(dataAction.editItem(formData));
+      if (idValue === 0) {
+        dispatch(
+          dataAction.addItem({
+            ...formData,
+            city: { city: formData.city },
+          })
+        );
+      } else {
+        dispatch(dataAction.editItem(formData));
+      }
     }
   };
 
-  //JSX
+  //JSX CODE
   return (
     <div className="form-container">
       <div className="form-header">
@@ -97,11 +113,12 @@ const EditUser = () => {
                 <input
                   type="text"
                   name={data}
+                  onFocus={onBlurHandler}
                   onBlur={onBlurHandler}
                   defaultValue={formData[data]}
                   onChange={onChangeHandler}
                 />
-                {!error.inTouch && formData[data]?.length < 5 && (
+                {error.inTouch && formData[data]?.length < 5 && (
                   <p style={{ color: "red" }}>Invalid {data} field!</p>
                 )}
               </div>
@@ -123,4 +140,4 @@ const EditUser = () => {
   );
 };
 
-export default EditUser;
+export default UserForm;

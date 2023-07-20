@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import MainNavigation from "../components/MainNavigation";
 
 const RootLayout = () => {
   return (
     <>
-      <h1 style={{ marginLeft: 32, marginBottom: 110 }}>DashBoard</h1>
+      <MainNavigation />
       <Outlet />
     </>
   );
